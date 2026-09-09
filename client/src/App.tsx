@@ -1,6 +1,7 @@
 /* Quiet Atelier design: editorial commerce layout, warm ivory canvas, charcoal type, burnished copper accents. */
 import { useEffect, useMemo, useState } from "react";
 import { Link, Route, Router as WouterRouter, Switch, useLocation, useRoute } from "wouter";
+import { useHashLocation } from "wouter/use-hash-location";
 import { Toaster, toast } from "sonner";
 import { Heart, Search, ShoppingBag, UserRound, Menu, X, ArrowRight, Star, Minus, Plus, Trash2, SlidersHorizontal, ChevronDown, Check, Truck, RotateCcw, ShieldCheck, Mail, Instagram, Facebook, Twitter } from "lucide-react";
 
@@ -47,7 +48,7 @@ function App() {
   return <>
     <Toaster position="bottom-right" toastOptions={{ className: "nova-toast" }} />
     <Header cartCount={cartCount} wishlistCount={wishlist.length} search={search} setSearch={setSearch} menu={menu} setMenu={setMenu} />
-    <main><WouterRouter base={githubPages ? "/-_nova-store" : ""}><Switch>
+    <main><WouterRouter hook={githubPages ? useHashLocation : undefined}><Switch>
       <Route path="/" component={() => <Home addToCart={addToCart} wishlist={wishlist} toggleWish={toggleWish} cart={cart} />} />
       <Route path="/shop" component={() => <Shop addToCart={addToCart} wishlist={wishlist} toggleWish={toggleWish} />} />
       <Route path="/offers" component={() => <Offers addToCart={addToCart} wishlist={wishlist} toggleWish={toggleWish} />} />
