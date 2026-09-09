@@ -4,10 +4,11 @@ import { Link, Route, Switch, useLocation, useRoute } from "wouter";
 import { Toaster, toast } from "sonner";
 import { Heart, Search, ShoppingBag, UserRound, Menu, X, ArrowRight, Star, Minus, Plus, Trash2, SlidersHorizontal, ChevronDown, Check, Truck, RotateCcw, ShieldCheck, Mail, Instagram, Facebook, Twitter } from "lucide-react";
 
-const heroImage = "/manus-storage/nova-hero_eeb6b503.jpg";
-const editorialImage = "/manus-storage/nova-editorial-detail_881774f1.jpg";
-const categoryImage = "/manus-storage/nova-category-objects_314fe49b.jpg";
-const markImage = "/manus-storage/nova-mark_4ba71947.png";
+const githubPages = typeof window !== "undefined" && window.location.hostname.endsWith("github.io");
+const heroImage = githubPages ? "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?auto=format&fit=crop&w=1400&q=85" : "/manus-storage/nova-hero_eeb6b503.jpg";
+const editorialImage = githubPages ? "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1200&q=85" : "/manus-storage/nova-editorial-detail_881774f1.jpg";
+const categoryImage = githubPages ? "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=900&q=85" : "/manus-storage/nova-category-objects_314fe49b.jpg";
+const markImage = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cg fill='none' stroke='%23B66A4A' stroke-width='8' stroke-linecap='round'%3E%3Cpath d='M50 12v25M50 63v25M12 50h25M63 50h25'/%3E%3Cpath d='M25 25l18 18M57 57l18 18M75 25L57 43M43 57L25 75'/%3E%3C/g%3E%3Ccircle cx='50' cy='50' r='7' fill='%23B66A4A'/%3E%3C/svg%3E";
 
 const productImages = [
   "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=85",

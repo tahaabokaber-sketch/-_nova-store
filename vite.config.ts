@@ -216,6 +216,8 @@ export default defineConfig({
   },
   envDir: path.resolve(import.meta.dirname),
   root: path.resolve(import.meta.dirname, "client"),
+  // GitHub Pages serves this repository from a subpath; local/Manus previews stay at root.
+  base: process.env.GITHUB_ACTIONS ? "/-_nova-store/" : "/",
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
